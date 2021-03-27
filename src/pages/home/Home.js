@@ -25,7 +25,7 @@ const Home = () => {
       {!saveClicked ? <div className="home_container">
         <h1 className="home_container_title">I will be a millionaire!</h1>
         <div className="home_container_rows_number">
-          <label>How many rows? (1-14) </label>
+          <label>How many rows?</label>
           <input
             type="number"
             value={numberOfRows}

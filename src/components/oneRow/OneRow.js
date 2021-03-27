@@ -3,7 +3,9 @@ import OneNumber from '../oneNumber/OneNumber';
 
 import './OneRow.css';
 
-const OneRow = ({ result, extraNumber }) => {
+const OneRow = ({ result, extraNumber, lotteryNumbers }) => {
+  
+  console.log('lotteryNumbers-onerow', lotteryNumbers);
   return (
     <div className="oneRow_container">
       <div className="oneRow_container_extraNumber">

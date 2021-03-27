@@ -8,7 +8,7 @@
 .home_container_title {
   color: white;
   margin-top: 1rem;
-  font-weight: 800;
+  font-weight: 1100;
 }
 
 .home_container_rows_number {
@@ -20,7 +20,8 @@
 }
 
 .home_container_rows_number > label {
-  font-size: 20px;
+  font-size: 24px;
+  color: white;
 }
 
 .home_container_rows_number > input {
@@ -46,6 +47,7 @@
   font-size: 20px;
   background-color: greenyellow;
   color: black;
+  cursor: pointer;
 }
 
 .home_container_buttons > button:active {

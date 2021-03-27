@@ -19,3 +19,14 @@
   width: 35px;
   text-align: center;
 }
+
+.oneNumber_container_match {
+  background-color: rgb(230, 233, 90);
+  margin: 0px 5px;
+  padding: 8px;
+  border-radius: 50%;
+  color: black;
+  border: 1px black solid;
+  width: 35px;
+  text-align: center;
+}

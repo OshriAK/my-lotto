@@ -1,0 +1,59 @@
+.realNumber_container {
+  background-color: yellowgreen;
+  margin: 1rem;
+  padding: 1.2rem .4rem;
+  border-radius: 5px;
+  border: 2px white solid;
+  text-align: center;
+}
+
+.realNumber_container_title {
+    margin-bottom: 1rem;
+    color: white;
+    background-color: grey;
+}
+
+.realNumber_container_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.realNumber_container_form > div {
+  margin: 2px;
+}
+
+.realNumber_container_form_numbers {
+    display: flex;
+}
+
+.realNumber_container_form > div > div > input {
+    text-align: center;
+    width: 44px;
+    height: 44px;
+    background-color: red;
+    outline: none;
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+.extra {
+    background-color: rgb(69, 160, 202) !important;
+}
+
+.form_button {
+    margin-top: 1rem;
+    padding: 10px 20px;
+    outline: none;
+    border: 1.5px solid white;
+    border-radius: 5px;
+    font-size: 20px;
+    background-color: yellow;
+    color: black;
+    cursor: pointer;
+}
+
+.form_button > button:active {
+    opacity: 0.8;
+}
