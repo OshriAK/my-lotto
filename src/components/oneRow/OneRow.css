@@ -1,0 +1,15 @@
+.oneRow_container {
+  display: flex;
+  margin-top: 1rem;
+  background-color: white;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.oneRow_container_extraNumber {
+  margin-right: 1rem;
+}
+
+.oneRow_container_result {
+  display: flex;
+}

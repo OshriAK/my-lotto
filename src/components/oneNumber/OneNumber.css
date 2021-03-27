@@ -1,0 +1,21 @@
+.oneNumber_container {
+  background-color: red;
+  margin: 0px 5px;
+  padding: 8px;
+  border-radius: 50%;
+  color: white;
+  border: 1px black solid;
+  width: 35px;
+  text-align: center;
+}
+
+.oneNumber_container_extra {
+  background-color: rgb(69, 160, 202);
+  margin: 0px 5px;
+  padding: 8px;
+  border-radius: 50%;
+  color: white;
+  border: 1px black solid;
+  width: 35px;
+  text-align: center;
+}
