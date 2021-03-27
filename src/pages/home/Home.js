@@ -7,7 +7,7 @@ import getRandomRow from "../../helper/getRandomRow";
 import "./Home.css";
 
 const Home = () => {
-  const [numberOfRows, setNumberOfRows] = useState(1);
+  const [numberOfRows, setNumberOfRows] = useState(0);
   const [result, setResult] = useState([]);
   const [saveClicked, setSaveClicked] = useState(false);
 
@@ -22,33 +22,47 @@ const Home = () => {
 
   return (
     <>
-      {!saveClicked ? <div className="home_container">
-        <h1 className="home_container_title">I will be a millionaire!</h1>
-        <div className="home_container_rows_number">
-          <label>How many rows?</label>
-          <input
-            type="number"
-            value={numberOfRows}
-            onChange={(e) => setNumberOfRows(e.target.value)}
-          />
-          {result &&
-            result.map((r, index) => (
-              <OneRow
-                key={index}
-                result={r.result}
-                extraNumber={r.extraNumber}
-              />
-            ))}
-          <div className="home_container_buttons">
-            <button onClick={() => sendHandler(numberOfRows)}>Generate</button>
-            {result.length !== 0 && <button className="home_container_buttons_save" onClick={() => saveHandler()}>Save</button>}
+      {!saveClicked ? (
+        <div className="home_container">
+          <h1 className="home_container_title">I will be a millionaire!</h1>
+          <div className="home_container_rows_number">
+            <label>How many rows?</label>
+            <input
+              type="number"
+              value={numberOfRows}
+              onChange={(e) => setNumberOfRows(e.target.value)}
+            />
+            {result &&
+              result.map((r, index) => (
+                <OneRow
+                  key={index}
+                  result={r.result}
+                  extraNumber={r.extraNumber}
+                />
+              ))}
+            <div className="home_container_buttons">
+              <button onClick={() => sendHandler(numberOfRows)}>
+                Generate
+              </button>
+              {result.length !== 0 && (
+                <button
+                  className="home_container_buttons_save"
+                  onClick={() => saveHandler()}
+                >
+                  Save
+                </button>
+              )}
+            </div>
           </div>
         </div>
-      </div> : <Redirect to={{
-            pathname: '/Cart',
-            state: result
-        }}
-/>}
+      ) : (
+        <Redirect
+          to={{
+            pathname: "/Cart",
+            state: result,
+          }}
+        />
+      )}
     </>
   );
 };

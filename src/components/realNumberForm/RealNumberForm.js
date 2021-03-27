@@ -3,13 +3,13 @@ import React, { useState } from "react";
 import "./RealNumberForm.css";
 
 const RealNumberForm = ({ getLotteryNumber }) => {
-  const [num1, setNum1] = useState(0);
-  const [num2, setNum2] = useState(0);
-  const [num3, setNum3] = useState(0);
-  const [num4, setNum4] = useState(0);
-  const [num5, setNum5] = useState(0);
-  const [num6, setNum6] = useState(0);
-  const [extraNumber, setExtraNumber] = useState(0);
+  const [num1, setNum1] = useState(1);
+  const [num2, setNum2] = useState(1);
+  const [num3, setNum3] = useState(1);
+  const [num4, setNum4] = useState(1);
+  const [num5, setNum5] = useState(1);
+  const [num6, setNum6] = useState(1);
+  const [extraNumber, setExtraNumber] = useState(1);
 
   const submitHandler = (e) => {
     e.preventDefault();

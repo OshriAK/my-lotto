@@ -40,8 +40,6 @@ const Cart = (props) => {
     setShowEnterNumbers((prev) => !prev);
   };
 
-  console.log("lotterynumber", lotteryNumber);
-
   return (
     <div className="cart_container">
       <h1 className="cart_container_title">Good luck!</h1>

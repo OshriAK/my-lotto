@@ -1,20 +1,36 @@
-import React from 'react';
-import OneNumber from '../oneNumber/OneNumber';
+import React from "react";
+import OneNumber from "../oneNumber/OneNumber";
 
-import './OneRow.css';
+import "./OneRow.css";
 
 const OneRow = ({ result, extraNumber, lotteryNumbers }) => {
-  
-  console.log('lotteryNumbers-onerow', lotteryNumbers);
+  let extraMatch = false;
+  let match = false;
+  let existedNumber = undefined;
+
+  if (lotteryNumbers && extraNumber === parseInt(lotteryNumbers.extraNumber)) {
+    extraMatch = true;
+  }
+
   return (
     <div className="oneRow_container">
       <div className="oneRow_container_extraNumber">
-        <OneNumber number={extraNumber} extra={true} />
+        <OneNumber number={extraNumber} extra={true} match={extraMatch} />
       </div>
       <div className="oneRow_container_result">
-        {result.map((num) => (
-          <OneNumber key={num} number={num} extra={false} />
-        ))}
+        {result.map((num) => {
+          existedNumber =
+            lotteryNumbers &&
+            lotteryNumbers.result.find((e) => parseInt(e) === num);
+          if (existedNumber) {
+            match = true;
+          } else {
+            match = false;
+          }
+          return (
+            <OneNumber key={num} number={num} extra={false} match={match} />
+          );
+        })}
       </div>
     </div>
   );
