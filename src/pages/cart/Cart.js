@@ -9,6 +9,8 @@ const Cart = (props) => {
   const [finalResult, setFinalResult] = useState(undefined);
   const [lotteryNumber, setLotteryNumber] = useState(undefined);
   const [showEnterNumbers, setShowEnterNumbers] = useState(false);
+  let existedNumber = 0;
+  let matchCounter = 0;
 
   const savedResult = props.location.state;
 
@@ -44,14 +46,25 @@ const Cart = (props) => {
     <div className="cart_container">
       <h1 className="cart_container_title">Good luck!</h1>
       {finalResult &&
-        finalResult.map((r, index) => (
-          <OneRow
-            key={index}
-            result={r.result}
-            extraNumber={r.extraNumber}
-            lotteryNumbers={lotteryNumber}
-          />
-        ))}
+        finalResult.map((r, index) => {
+          matchCounter = 0;
+          r.result.map((num) => {
+            existedNumber = lotteryNumber && lotteryNumber.result.find(
+              (lnum) => parseInt(lnum) === num);
+              if(existedNumber) {
+                matchCounter = matchCounter + 1;
+              }
+          });
+          return (
+            <OneRow
+              key={index}
+              result={r.result}
+              extraNumber={r.extraNumber}
+              lotteryNumbers={lotteryNumber}
+              matchCounter = {matchCounter}
+            />
+          );
+        })}
       {finalResult && (
         <div className="cart_container_buttons">
           <button onClick={checkHandler}>Check</button>
