@@ -60,7 +60,7 @@ const OneRow = ({ result, extraNumber, lotteryNumbers, matchCounter }) => {
   }
 
   return (
-    <div className={`oneRow_container${matchCounter > 2 ? '_win' : ''}`}> 
+    <div className={`oneRow_container${matchCounter === 3 ? '_win3' : matchCounter > 3 ? '_win4' : ''}`}> 
       <div className="oneRow_container_extraNumber">
         <OneNumber number={extraNumber} extra={true} match={extraMatch} />
       </div>

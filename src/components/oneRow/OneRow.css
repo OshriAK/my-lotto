@@ -14,7 +14,15 @@
   display: flex;
 }
 
-.oneRow_container_win {
+.oneRow_container_win3 {
+  display: flex;
+  margin-top: 1rem;
+  background-color: rgb(125, 214, 230);
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.oneRow_container_win4 {
   display: flex;
   margin-top: 1rem;
   background-color: rgb(247, 247, 52);
