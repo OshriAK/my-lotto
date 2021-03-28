@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import "./RealNumberForm.css";
 
-const RealNumberForm = ({ getLotteryNumber }) => {
+const RealNumberForm = ({ getLotteryNumber, setShowWinsOnly }) => {
   const [num1, setNum1] = useState(1);
   const [num2, setNum2] = useState(1);
   const [num3, setNum3] = useState(1);
@@ -18,6 +18,10 @@ const RealNumberForm = ({ getLotteryNumber }) => {
       extraNumber: extraNumber,
     });
   };
+
+  const showWinsOnlyhandler = () => {
+    setShowWinsOnly(prev => !prev);
+  }
 
   return (
     <div className="realNumber_container">
@@ -36,27 +40,54 @@ const RealNumberForm = ({ getLotteryNumber }) => {
             />
           </div>
           <div>
-            <input type="number" value={num1} onChange={(e) => setNum1(e.target.value)} />
+            <input
+              type="number"
+              value={num1}
+              onChange={(e) => setNum1(e.target.value)}
+            />
           </div>
           <div>
-            <input type="number" value={num2} onChange={(e) => setNum2(e.target.value)} />
+            <input
+              type="number"
+              value={num2}
+              onChange={(e) => setNum2(e.target.value)}
+            />
           </div>
           <div>
-            <input type="number" value={num3} onChange={(e) => setNum3(e.target.value)} />
+            <input
+              type="number"
+              value={num3}
+              onChange={(e) => setNum3(e.target.value)}
+            />
           </div>
           <div>
-            <input type="number" value={num4} onChange={(e) => setNum4(e.target.value)} />
+            <input
+              type="number"
+              value={num4}
+              onChange={(e) => setNum4(e.target.value)}
+            />
           </div>
           <div>
-            <input type="number" value={num5} onChange={(e) => setNum5(e.target.value)} />
+            <input
+              type="number"
+              value={num5}
+              onChange={(e) => setNum5(e.target.value)}
+            />
           </div>
           <div>
-            <input type="number" value={num6} onChange={(e) => setNum6(e.target.value)} />
+            <input
+              type="number"
+              value={num6}
+              onChange={(e) => setNum6(e.target.value)}
+            />
           </div>
         </div>
-        <button className="form_button" type="submit">
-          Submit
-        </button>
+        <div className="form_buttons_container">
+          <button className="form_submit" type="submit">
+            Submit
+          </button>
+          <button className="form_button_show-win-only" onClick={showWinsOnlyhandler}>Wins Only</button>
+        </div>
       </form>
     </div>
   );

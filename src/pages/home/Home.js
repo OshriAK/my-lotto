@@ -7,7 +7,7 @@ import getRandomRow from "../../helper/getRandomRow";
 import "./Home.css";
 
 const Home = () => {
-  const [numberOfRows, setNumberOfRows] = useState(0);
+  const [numberOfRows, setNumberOfRows] = useState('');
   const [result, setResult] = useState([]);
   const [saveClicked, setSaveClicked] = useState(false);
 

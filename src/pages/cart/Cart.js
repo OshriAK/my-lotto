@@ -9,6 +9,8 @@ const Cart = (props) => {
   const [finalResult, setFinalResult] = useState(undefined);
   const [lotteryNumber, setLotteryNumber] = useState(undefined);
   const [showEnterNumbers, setShowEnterNumbers] = useState(false);
+  const [showWinsOnly, setShowWinsOnly] = useState(false);
+
   let existedNumber = 0;
   let matchCounter = 0;
 
@@ -62,6 +64,7 @@ const Cart = (props) => {
               extraNumber={r.extraNumber}
               lotteryNumbers={lotteryNumber}
               matchCounter = {matchCounter}
+              showWinsOnly = {showWinsOnly}
             />
           );
         })}
@@ -77,7 +80,7 @@ const Cart = (props) => {
         </div>
       )}
       {showEnterNumbers && (
-        <RealNumbersForm getLotteryNumber={getLotteryNumber} />
+        <RealNumbersForm getLotteryNumber={getLotteryNumber} setShowWinsOnly={setShowWinsOnly}/>
       )}
     </div>
   );
