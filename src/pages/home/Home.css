@@ -7,7 +7,7 @@
 
 .home_container_title {
   color: white;
-  margin-top: 1rem;
+  margin-top: .5rem;
   font-weight: 1100;
 }
 
@@ -16,7 +16,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .home_container_rows_number > label {
@@ -39,7 +39,7 @@
 }
 
 .home_container_buttons > button {
-  margin: 2rem 1rem 1rem 1rem;
+  margin: 1rem;
   padding: 15px 30px;
   outline: none;
   border: 1.5px solid white;

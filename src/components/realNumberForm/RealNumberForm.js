@@ -3,13 +3,13 @@ import React, { useState } from "react";
 import "./RealNumberForm.css";
 
 const RealNumberForm = ({ getLotteryNumber, setShowWinsOnly }) => {
-  const [num1, setNum1] = useState(1);
-  const [num2, setNum2] = useState(1);
-  const [num3, setNum3] = useState(1);
-  const [num4, setNum4] = useState(1);
-  const [num5, setNum5] = useState(1);
-  const [num6, setNum6] = useState(1);
-  const [extraNumber, setExtraNumber] = useState(1);
+  const [num1, setNum1] = useState("");
+  const [num2, setNum2] = useState("");
+  const [num3, setNum3] = useState("");
+  const [num4, setNum4] = useState("");
+  const [num5, setNum5] = useState("");
+  const [num6, setNum6] = useState("");
+  const [extraNumber, setExtraNumber] = useState("");
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -20,8 +20,8 @@ const RealNumberForm = ({ getLotteryNumber, setShowWinsOnly }) => {
   };
 
   const showWinsOnlyhandler = () => {
-    setShowWinsOnly(prev => !prev);
-  }
+    setShowWinsOnly((prev) => !prev);
+  };
 
   return (
     <div className="realNumber_container">
@@ -36,6 +36,7 @@ const RealNumberForm = ({ getLotteryNumber, setShowWinsOnly }) => {
               className="extra"
               type="number"
               value={extraNumber}
+              placeholder="E"
               onChange={(e) => setExtraNumber(e.target.value)}
             />
           </div>
@@ -43,6 +44,7 @@ const RealNumberForm = ({ getLotteryNumber, setShowWinsOnly }) => {
             <input
               type="number"
               value={num1}
+              placeholder="1"
               onChange={(e) => setNum1(e.target.value)}
             />
           </div>
@@ -50,6 +52,7 @@ const RealNumberForm = ({ getLotteryNumber, setShowWinsOnly }) => {
             <input
               type="number"
               value={num2}
+              placeholder="2"
               onChange={(e) => setNum2(e.target.value)}
             />
           </div>
@@ -57,6 +60,7 @@ const RealNumberForm = ({ getLotteryNumber, setShowWinsOnly }) => {
             <input
               type="number"
               value={num3}
+              placeholder="3"
               onChange={(e) => setNum3(e.target.value)}
             />
           </div>
@@ -64,6 +68,7 @@ const RealNumberForm = ({ getLotteryNumber, setShowWinsOnly }) => {
             <input
               type="number"
               value={num4}
+              placeholder="4"
               onChange={(e) => setNum4(e.target.value)}
             />
           </div>
@@ -71,6 +76,7 @@ const RealNumberForm = ({ getLotteryNumber, setShowWinsOnly }) => {
             <input
               type="number"
               value={num5}
+              placeholder="5"
               onChange={(e) => setNum5(e.target.value)}
             />
           </div>
@@ -78,6 +84,7 @@ const RealNumberForm = ({ getLotteryNumber, setShowWinsOnly }) => {
             <input
               type="number"
               value={num6}
+              placeholder="6"
               onChange={(e) => setNum6(e.target.value)}
             />
           </div>
@@ -86,7 +93,12 @@ const RealNumberForm = ({ getLotteryNumber, setShowWinsOnly }) => {
           <button className="form_submit" type="submit">
             Submit
           </button>
-          <button className="form_button_show-win-only" onClick={showWinsOnlyhandler}>Wins Only</button>
+          <button
+            className="form_button_show-win-only"
+            onClick={showWinsOnlyhandler}
+          >
+           Show wins / all
+          </button>
         </div>
       </form>
     </div>

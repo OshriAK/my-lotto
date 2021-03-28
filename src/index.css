@@ -5,6 +5,6 @@
 }
 
 body {
-  background-image: linear-gradient(pink, red);
+  background-image: linear-gradient(to bottom right, rgb(65, 107, 243), rgb(28, 212, 236));
   /* height: 100vh; */
 }

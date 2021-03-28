@@ -1,6 +1,6 @@
 .realNumber_container {
-  background-color: yellowgreen;
-  margin: 1rem;
+  background-color: rgb(202, 228, 151);
+  margin: .5rem;
   padding: 1.2rem .4rem;
   border-radius: 5px;
   border: 2px white solid;
@@ -30,13 +30,14 @@
 
 .realNumber_container_form > div > div > input {
     text-align: center;
-    width: 44px;
-    height: 44px;
+    width: 42px;
+    height: 42px;
     background-color: red;
     outline: none;
     border-radius: 50%;
     font-size: 20px;
     border: 1px solid black;
+    margin: 0px 2px;
 }
 
 .extra {

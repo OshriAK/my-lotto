@@ -1,7 +1,7 @@
 .sidedrawer {
   width: 50%;
   height: 100vh;
-  background-image: linear-gradient(red, pink);
+  background-image: linear-gradient(to bottom right, rgb(65, 107, 243), rgb(28, 212, 236));
   position: fixed;
   top: 0;
   left: 0;

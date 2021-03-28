@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import { useHistory } from "react-router-dom";
 import OneRow from "../../components/oneRow/OneRow";
 import RealNumbersForm from "../../components/realNumberForm/RealNumberForm";
 
@@ -11,6 +11,7 @@ const Cart = (props) => {
   const [showEnterNumbers, setShowEnterNumbers] = useState(false);
   const [showWinsOnly, setShowWinsOnly] = useState(false);
 
+  const history = useHistory(); 
   let existedNumber = 0;
   let matchCounter = 0;
 
@@ -34,6 +35,7 @@ const Cart = (props) => {
     setTimeout(() => {
       localStorage.clear();
     }, [50]);
+    history.push('/');
   };
 
   const getLotteryNumber = (numbers) => {
@@ -59,17 +61,21 @@ const Cart = (props) => {
         </div>
       )}
       {showEnterNumbers && (
-        <RealNumbersForm getLotteryNumber={getLotteryNumber} setShowWinsOnly={setShowWinsOnly}/>
+        <RealNumbersForm
+          getLotteryNumber={getLotteryNumber}
+          setShowWinsOnly={setShowWinsOnly}
+        />
       )}
       {finalResult &&
         finalResult.map((r, index) => {
           matchCounter = 0;
           r.result.forEach((num) => {
-            existedNumber = lotteryNumber && lotteryNumber.result.find(
-              (lnum) => parseInt(lnum) === num);
-              if(existedNumber) {
-                matchCounter = matchCounter + 1;
-              }
+            existedNumber =
+              lotteryNumber &&
+              lotteryNumber.result.find((lnum) => parseInt(lnum) === num);
+            if (existedNumber) {
+              matchCounter = matchCounter + 1;
+            }
           });
           return (
             <OneRow
@@ -77,8 +83,8 @@ const Cart = (props) => {
               result={r.result}
               extraNumber={r.extraNumber}
               lotteryNumbers={lotteryNumber}
-              matchCounter = {matchCounter}
-              showWinsOnly = {showWinsOnly}
+              matchCounter={matchCounter}
+              showWinsOnly={showWinsOnly}
             />
           );
         })}
