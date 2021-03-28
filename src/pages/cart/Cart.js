@@ -48,7 +48,7 @@ const Cart = (props) => {
       {finalResult &&
         finalResult.map((r, index) => {
           matchCounter = 0;
-          r.result.map((num) => {
+          r.result.forEach((num) => {
             existedNumber = lotteryNumber && lotteryNumber.result.find(
               (lnum) => parseInt(lnum) === num);
               if(existedNumber) {
