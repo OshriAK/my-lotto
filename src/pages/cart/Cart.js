@@ -47,6 +47,20 @@ const Cart = (props) => {
   return (
     <div className="cart_container">
       <h1 className="cart_container_title">Good luck!</h1>
+      {finalResult && (
+        <div className="cart_container_buttons">
+          <button onClick={checkHandler}>Check</button>
+          <button
+            className="cart_container_buttons_delete"
+            onClick={deleteHandler}
+          >
+            Delete all
+          </button>
+        </div>
+      )}
+      {showEnterNumbers && (
+        <RealNumbersForm getLotteryNumber={getLotteryNumber} setShowWinsOnly={setShowWinsOnly}/>
+      )}
       {finalResult &&
         finalResult.map((r, index) => {
           matchCounter = 0;
@@ -68,20 +82,6 @@ const Cart = (props) => {
             />
           );
         })}
-      {finalResult && (
-        <div className="cart_container_buttons">
-          <button onClick={checkHandler}>Check</button>
-          <button
-            className="cart_container_buttons_delete"
-            onClick={deleteHandler}
-          >
-            Delete all
-          </button>
-        </div>
-      )}
-      {showEnterNumbers && (
-        <RealNumbersForm getLotteryNumber={getLotteryNumber} setShowWinsOnly={setShowWinsOnly}/>
-      )}
     </div>
   );
 };

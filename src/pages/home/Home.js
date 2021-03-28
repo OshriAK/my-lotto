@@ -32,14 +32,6 @@ const Home = () => {
               value={numberOfRows}
               onChange={(e) => setNumberOfRows(e.target.value)}
             />
-            {result &&
-              result.map((r, index) => (
-                <OneRow
-                  key={index}
-                  result={r.result}
-                  extraNumber={r.extraNumber}
-                />
-              ))}
             <div className="home_container_buttons">
               <button onClick={() => sendHandler(numberOfRows)}>
                 Generate
@@ -53,6 +45,14 @@ const Home = () => {
                 </button>
               )}
             </div>
+            {result &&
+              result.map((r, index) => (
+                <OneRow
+                  key={index}
+                  result={r.result}
+                  extraNumber={r.extraNumber}
+                />
+              ))}
           </div>
         </div>
       ) : (
