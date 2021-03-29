@@ -21,13 +21,15 @@ const OneRow = ({
   return (
     <div
       className={`oneRow_container${
-        matchCounter === 3
+        matchCounter === 3 && showWinsOnly === "+3"
           ? "_win3"
           : matchCounter === 4
           ? "_win4"
-          : matchCounter > 4
+          : matchCounter === 5
           ? "_win5"
-          : showWinsOnly
+          : matchCounter === 6
+          ? "_win6"
+          : showWinsOnly !== "all"
           ? "_hide"
           : ""
       }`}

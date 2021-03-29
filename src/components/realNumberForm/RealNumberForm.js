@@ -19,8 +19,8 @@ const RealNumberForm = ({ getLotteryNumber, setShowWinsOnly }) => {
     });
   };
 
-  const showWinsOnlyhandler = () => {
-    setShowWinsOnly((prev) => !prev);
+  const showWinsOnlyhandler = (event) => {
+    setShowWinsOnly(event.target.value);
   };
 
   return (
@@ -93,12 +93,35 @@ const RealNumberForm = ({ getLotteryNumber, setShowWinsOnly }) => {
           <button className="form_submit" type="submit">
             Submit
           </button>
-          <button
-            className="form_button_show-win-only"
-            onClick={showWinsOnlyhandler}
-          >
-           Wins
-          </button>
+          <div className="radio_buttons_container">
+            <div className="radio_buttons_container_mini_container">
+              <label>ALL</label>
+              <input
+                type="radio"
+                name="wins"
+                value="all"
+                onChange={showWinsOnlyhandler}
+              />
+            </div>
+            <div className="radio_buttons_container_mini_container">
+              <label>+3</label>
+              <input
+                type="radio"
+                name="wins"
+                value="+3"
+                onChange={showWinsOnlyhandler}
+              />
+            </div>
+            <div className="radio_buttons_container_mini_container">
+              <label>+4</label>
+              <input
+                type="radio"
+                name="wins"
+                value="+4"
+                onChange={showWinsOnlyhandler}
+              />
+            </div>
+          </div>
         </div>
       </form>
     </div>

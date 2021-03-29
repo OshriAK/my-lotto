@@ -36,7 +36,16 @@
   background-color: rgb(235, 63, 71);
   padding: 15px;
   border-radius: 5px;
-  border: 3px white solid;
+  border: 2px white solid;
+}
+
+.oneRow_container_win6 {
+  display: flex;
+  margin-top: 1rem;
+  background-color: rgb(34, 21, 21);
+  padding: 15px;
+  border-radius: 5px;
+  border: 4px white solid;
 }
 
 .oneRow_container_hide {

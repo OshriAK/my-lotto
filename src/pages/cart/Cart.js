@@ -9,7 +9,7 @@ const Cart = (props) => {
   const [finalResult, setFinalResult] = useState(undefined);
   const [lotteryNumber, setLotteryNumber] = useState(undefined);
   const [showEnterNumbers, setShowEnterNumbers] = useState(false);
-  const [showWinsOnly, setShowWinsOnly] = useState(false);
+  const [showWinsOnly, setShowWinsOnly] = useState('');
 
   const history = useHistory(); 
   let existedNumber = 0;
