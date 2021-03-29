@@ -97,7 +97,7 @@ const RealNumberForm = ({ getLotteryNumber, setShowWinsOnly }) => {
             className="form_button_show-win-only"
             onClick={showWinsOnlyhandler}
           >
-           Show wins / all
+           Wins
           </button>
         </div>
       </form>

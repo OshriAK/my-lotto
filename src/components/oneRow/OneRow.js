@@ -23,8 +23,10 @@ const OneRow = ({
       className={`oneRow_container${
         matchCounter === 3
           ? "_win3"
-          : matchCounter > 3
+          : matchCounter === 4
           ? "_win4"
+          : matchCounter > 4
+          ? "_win5"
           : showWinsOnly
           ? "_hide"
           : ""
