@@ -51,6 +51,7 @@ const Home = () => {
                   key={index}
                   result={r.result}
                   extraNumber={r.extraNumber}
+                  showWinsOnly="all"
                 />
               ))}
           </div>
